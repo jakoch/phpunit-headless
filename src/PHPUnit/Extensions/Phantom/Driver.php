@@ -78,7 +78,7 @@ EOT;
         #echo $output;
 
         $testResult = $this->executeTemporaryTestFile($output);
-        
+
         $lines = explode("\n", $testResult);
 
         foreach ($lines as $line) {
@@ -109,10 +109,10 @@ EOT;
             $this->testcase->assertTrue($test->isSuccess(), $test->getName());
         }
     }
-    
+
     /**
      * Creates a temporary JS file, executes it with PhantomJS, then deletes it!
-     * 
+     *
      * @param string $content The JS Test Content.
      * @return string Test Result (stdout) of PhantomJS Test Run.
      */
@@ -150,12 +150,14 @@ EOT;
      */
     public static function executePhantomJS($testFile, $args = null, $options = null)
     {
+        // phpunit-headless/src/PHPUnit/Extensions/Phantom/Driver.php <- 4 folder up
+        $bin_dir = dirname(dirname(dirname(dirname(__DIR__))));
+
         // determine PhantomJS binary, take windows into account
         if (DIRECTORY_SEPARATOR === '\\') {
-            $bin_dir = dirname(dirname(dirname(__DIR__))) . '\bin\\';
-            $cmd = $bin_dir . "phantomjs.exe";
+            $cmd = $bin_dir . "\bin\phantomjs.exe";
         } else {
-            $cmd = "phantomjs";
+            $cmd = $bin_dir . "/bin/phantomjs";
         }
 
         // PhantomJS binary was not found

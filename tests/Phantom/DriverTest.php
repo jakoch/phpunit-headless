@@ -13,6 +13,6 @@ class DriverTest extends \PHPUnit_Framework_TestCase
 
     public function testExecutePhantomJS()
     {
-
+    	$this->assertTrue(true);
     }
 }
