@@ -118,7 +118,7 @@ EOT;
      */
     private function executeTemporaryTestFile($content)
     {
-        $file = tempnam(sys_get_temp_dir(), "phantomjs_");
+        $file = tempnam(sys_get_temp_dir(), "phantomjs_" . uniqid());
 
         if (false === $file) {
             throw new \RuntimeException('Could not create temp file. Check temp directory permissions.');
