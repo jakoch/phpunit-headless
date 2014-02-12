@@ -18,12 +18,9 @@ php:
 before_install:
   - composer self-update
   - composer install --dev --prefer-dist --no-interaction
+  - ./bin/bin/phantomjs -v                                  # < display PhantomJS Version
 
 script:
-  - ./bin/bin/phantomjs -v
-  - cd bin
-  - ls
-  - cd ..
   - phpunit -c ./tests/phpunit.xml.travis
 
 notifications:

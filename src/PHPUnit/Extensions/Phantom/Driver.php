@@ -157,10 +157,8 @@ EOT;
         if (DIRECTORY_SEPARATOR === '\\') {
             $cmd = $bin_dir . "\bin\phantomjs.exe";
         } else {
-            $cmd = $bin_dir . "/bin/phantomjs";
+            $cmd = $bin_dir . "/bin/bin/phantomjs";
         }
-        
-        shell_exec($cmd . " -v");
 
         // PhantomJS binary was not found
         if ((is_file($cmd) === false) or (is_executable($cmd) === false)) {
