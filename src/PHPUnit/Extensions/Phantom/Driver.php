@@ -159,6 +159,8 @@ EOT;
         } else {
             $cmd = $bin_dir . "/bin/phantomjs";
         }
+        
+        shell_exec($cmd . " -v");
 
         // PhantomJS binary was not found
         if ((is_file($cmd) === false) or (is_executable($cmd) === false)) {

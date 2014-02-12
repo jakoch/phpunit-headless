@@ -23,7 +23,7 @@
     },
     "autoload": {
         "classmap": [
-            "src/PHPUnit/"
+            "src/"
         ]
     },
     "scripts": {
