@@ -1,0 +1,34 @@
+{
+    "name": "jakoch/phpunit-headless",
+    "description": "Headless is a PhantomJS and SlimerJS integration for PHPUnit.",
+    "type": "library",
+    "keywords": ["xunit", "testing", "phantomjs", "casperjs", "slimerjs", "phpunit", "headless"],
+    "homepage": "https://github.com/jakoch/phpunit-headless/",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Jens-André Koch",
+            "email": "jakoch@web.de"
+        }
+    ],
+    "support": {
+        "source" : "https://github.com/jakoch/phpunit-headless/",
+        "issues" : "https://github.com/jakoch/phpunit-headless/issues",
+        "irc"    : "irc://irc.freenode.net/koch"
+    },
+    "require": {
+        "php"                        : ">=5.3.3",
+        "phpunit/phpunit"            : "3.7.*@dev",
+        "jakoch/phantomjs-installer" : "1.9.7"
+    },
+    "autoload": {
+        "classmap": [
+            "src/PHPUnit/"
+        ]
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "PhantomInstaller\\Installer::installPhantomJS"
+        ]
+    }
+}

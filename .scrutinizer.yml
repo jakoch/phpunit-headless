@@ -1,0 +1,36 @@
+#
+# scrutinizer-ci.com Configuration File
+#
+# https://scrutinizer-ci.com/docs/
+#
+before_commands:
+    - sudo composer self-update
+    - composer install --dev
+
+tools:
+
+    php_cs_fixer:
+        enabled: true
+        config:
+            level: all
+        filter:
+            paths: [src/*, tests/*]
+
+    php_code_sniffer:
+        enabled: true
+        config:
+            standard: PSR2
+        filter:
+            paths: [src/*, tests/*]
+
+    php_mess_detector: false
+
+    php_analyzer:
+        enabled: true
+        filter:
+            paths: [src/*, tests/*]
+
+    php_code_coverage:
+        enabled: true
+        filter:
+            paths: [src/*, tests/*]
