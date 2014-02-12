@@ -20,7 +20,10 @@ before_install:
   - composer install --dev --prefer-dist --no-interaction
 
 script:
-  - ./bin/phantomjs -v
+  - ./bin/bin/phantomjs -v
+  - cd bin
+  - ls
+  - cd ..
   - phpunit -c ./tests/phpunit.xml.travis
 
 notifications:
