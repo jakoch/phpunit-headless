@@ -17,16 +17,18 @@ class Extensions_Phantom_Tests_Phantom_PayloadExecuteTest extends \PHPUnit_Exten
         $this->assertEquals($payload, $this->payloadExecute->payloadToExecute);
 
         $result = $this->payloadExecute->runTest();
-
+        
+        $tab = "\t\t";
+       
         $output = "var exception = undefined;\n";
         $output .= "try {\n";
-        $output .= "console.log('This is the payload');\n";
+        $output .= $tab . "console.log('This is the payload');\n";
         $output .= "} catch (e) {\n";
-        $output .= "exception = e;\n";
+        $output .= $tab . "exception = e;\n";
         $output .= "}\n";
         $output .= "tests[tests.length] = {\n";
-        $output .= "'name': \"PayloadExecuteTest\",\n";
-        $output .= "'pass': exception === undefined\n";
+        $output .= $tab . "'name': \"PayloadExecuteTest\",\n";
+        $output .= $tab . "'pass': exception === undefined\n";
         $output .= "};\n";
 
         $this->assertSame($result, $output); // phpunit string comparison bug on windows
