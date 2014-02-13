@@ -6,6 +6,8 @@ error_reporting(E_ALL | E_STRICT);
 $systemUnderTest = realpath(dirname(__DIR__));
 $tests = realpath(__DIR__ . '/../tests');
 
+defined('TESTS_BASEDIR') || define('TESTS_BASEDIR', $tests);
+
 $paths = array(
     $systemUnderTest,
     $tests,

@@ -7,9 +7,9 @@ class Extensions_Phantom_Tests_Phantom_ExecuteFileTest extends \PHPUnit_Extensio
     public function setUp()
     {
         $name = 'testExecuteFile';
-        $data = array(0 => $tests . '/PhantomJS-examples/version.js');
+        $data = array(0 => TESTS_BASEDIR . '/PhantomJS-examples/version.js');
 
-        $this->execFileTest = new Extensions_Phantom_Tests_Phantom_ExecuteFileTest($name, $data);
+        $this->execFileTest = new Extensions_Phantom_Phantom_ExecuteFileTest($name, $data);
     }
     public function testExecuteFile()
     {

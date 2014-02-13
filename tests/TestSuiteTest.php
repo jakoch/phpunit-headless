@@ -12,7 +12,7 @@ class Extensions_Phantom_Tests_MultipleTestCases extends PHPUnit_Extensions_Phan
 
 class Extensions_Phantom_Tests_TestSuiteTest extends PHPUnit_Framework_TestCase
 {
-    public function testCreateSuitefromTestCaseClassWithMultipleTests()
+    public function testCreateTestSuiteFromTestCaseClass()
     {
         $suite = Extensions_Phantom_Tests_MultipleTestCases::suite('Extensions_Phantom_Tests_MultipleTestCases');
         
