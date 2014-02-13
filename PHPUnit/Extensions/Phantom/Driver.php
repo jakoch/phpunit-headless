@@ -40,10 +40,10 @@ class PHPUnit_Extensions_Phantom_Driver
         $page_content = json_encode($page_content);
 
         $output = <<<EOT
-
 var page = require('webpage').create();
-/*console.log('The default user agent is ' + page.settings.userAgent);*/
+
 page.content = $page_content;
+
 page.onLoadFinished = function (status) {
     try {
         if (status == 'success') {
