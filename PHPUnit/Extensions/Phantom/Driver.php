@@ -151,7 +151,7 @@ EOT;
     public static function executePhantomJS($testFile, $args = null, $options = null)
     {
         // phpunit-headless/src/PHPUnit/Extensions/Phantom/Driver.php <- 4 folder up
-        $bin_dir = dirname(dirname(dirname(dirname(__DIR__))));
+        $bin_dir = dirname(dirname(dirname(__DIR__)));
 
         // determine PhantomJS binary, take windows into account
         if (DIRECTORY_SEPARATOR === '\\') {
