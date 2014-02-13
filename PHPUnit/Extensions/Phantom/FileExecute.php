@@ -16,10 +16,6 @@ class PHPUnit_Extensions_Phantom_FileExecute extends PHPUnit_Framework_TestCase
 
     public function runTest()
     {
-        //echo $this->name . "\n";
-
-        $stdout = PHPUnit_Extensions_Phantom_Driver::executePhantomJS($this->file[0]);
-
-        return $stdout;
+        return PHPUnit_Extensions_Phantom_Driver::executePhantomJS($this->file[0]);
     }
 }

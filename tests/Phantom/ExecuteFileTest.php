@@ -1,6 +1,6 @@
 <?php
 
-class Extensions_Phantom_Tests_Phantom_ExecuteFileTest extends \PHPUnit_Extensions_PhantomTestCase
+class ExecuteFileTest extends \PHPUnit_Extensions_PhantomTestCase
 {
     private $execFileTest;
 
@@ -9,7 +9,7 @@ class Extensions_Phantom_Tests_Phantom_ExecuteFileTest extends \PHPUnit_Extensio
         $name = 'testExecuteFile';
         $data = array(0 => TESTS_BASEDIR . '/PhantomJS-examples/version.js');
 
-        $this->execFileTest = new Extensions_Phantom_Phantom_ExecuteFileTest($name, $data);
+        $this->execFileTest = new PHPUnit_Extensions_Phantom_FileExecute($name, $data);
     }
     public function testExecuteFile()
     {

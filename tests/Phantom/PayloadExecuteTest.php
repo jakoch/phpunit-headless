@@ -1,6 +1,6 @@
 <?php
 
-class Extensions_Phantom_Tests_Phantom_PayloadExecuteTest extends \PHPUnit_Extensions_PhantomTestCase
+class PayloadExecuteTest extends \PHPUnit_Extensions_PhantomTestCase
 {
     private $payloadExecute;
 

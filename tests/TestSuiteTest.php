@@ -1,13 +1,13 @@
 <?php
 class Extensions_Phantom_Tests_MultipleTestCases extends PHPUnit_Extensions_PhantomTestCase
 {
-    public function testAKE() {}
-    public function testWIL() {}
-    public function testECE() {}
-    public function testSKF() {}
-    public function testOAA() {}
-    public function testMSN() {}
-    public function testEST() {}
+    public function testAKE() { $this->assertTrue(1); }
+    public function testWIL() { $this->assertTrue(1); }
+    public function testECE() { $this->assertTrue(1); }
+    public function testSKF() { $this->assertTrue(1); }
+    public function testOAA() { $this->assertTrue(1); }
+    public function testMSN() { $this->assertTrue(1); }
+    public function testEST() { $this->assertTrue(1); }
 }
 
 class Extensions_Phantom_Tests_TestSuiteTest extends PHPUnit_Framework_TestCase
