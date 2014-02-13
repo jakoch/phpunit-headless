@@ -14,6 +14,7 @@
  */
 abstract class PHPUnit_Extensions_PhantomTestCase extends PHPUnit_Framework_TestCase
 {
+    /* PHPUnit_Extensions_Phantom_Driver */
     public $phantom;
 
     public function __construct($name = NULL, array $data = array(), $dataName = '')
