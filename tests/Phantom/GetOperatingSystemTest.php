@@ -16,6 +16,9 @@ class GetOperatingSystemTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($result, $expected);
     }
 
+    /**
+     * @codeCoverageIgnore
+     */
     public function testGetWindowsVersion()
     {
         $result = GetOperatingSystem::GetWindowsVersion();
@@ -27,7 +30,6 @@ class GetOperatingSystemTest extends \PHPUnit_Framework_TestCase
         } else {
             $this->assertEquals($result, php_uname('r'));
         }
-
     }
 
     public function testGetMachine()
@@ -35,6 +37,9 @@ class GetOperatingSystemTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(php_uname('m'), GetOperatingSystem::getMachine());
     }
 
+    /**
+     * @codeCoverageIgnore
+     */
     public function testGetBitSize()
     {
         $result = GetOperatingSystem::getBitSize();

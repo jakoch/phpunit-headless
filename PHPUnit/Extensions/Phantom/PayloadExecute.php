@@ -15,16 +15,6 @@ class PHPUnit_Extensions_Phantom_PayloadExecute extends PHPUnit_Framework_TestCa
         $this->payloadToExecute = $payloadToExecute;
     }
 
-    public function setSuccess($success)
-    {
-        $this->success = $success;
-    }
-
-    public function isSuccess()
-    {
-        return $this->success;
-    }
-
     public function setPayload($payloadToExecute)
     {
         $this->payloadToExecute = $payloadToExecute;

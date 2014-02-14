@@ -14,16 +14,16 @@
  */
 abstract class PHPUnit_Extensions_PhantomTestCase extends PHPUnit_Framework_TestCase
 {
-    /* PHPUnit_Extensions_Phantom_Driver */
+    /* @var $phantom PHPUnit_Extensions_Phantom_Driver */
     public $phantom;
 
     public function __construct($name = NULL, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
 
-        $this->phantom = new PHPUnit_Extensions_Phantom_Driver($this);
+        $this->phantom = new PHPUnit_Extensions_Phantom_Driver($this);        
     }
-
+    
     /**
      * Build a TestSuite from a TestCaseClass.
      * 
@@ -44,6 +44,8 @@ abstract class PHPUnit_Extensions_PhantomTestCase extends PHPUnit_Framework_Test
      */
     public function __call($command, $arguments)
     {
+        var_dump($command);
+        
         if ($this->phantom === null) {
             $msg = sprintf('There is currently no active Phantom session to execute the "%s" command.', $command);
             $msg .= ' You are probably trying to set some option in setUp() with an incorrect setter name.';

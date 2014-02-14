@@ -52,11 +52,13 @@ class GetOperatingSystem
             return '32';
         }
 
+        // @codeCoverageIgnoreStart
         if (PHP_INT_SIZE === 8) {
             return '64';
         }
 
         return PHP_INT_SIZE; // 16-bit?
+        // @codeCoverageIgnoreEnd
     }
 
     public function __toString()

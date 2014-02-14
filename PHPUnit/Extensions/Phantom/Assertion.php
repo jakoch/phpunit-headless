@@ -14,9 +14,9 @@ class PHPUnit_Extensions_Phantom_Assertion
 
     public function __construct($name, $condition)
     {
-        $this->name = $name;
+        $this->name      = $name;
         $this->condition = $condition;
-        $this->success = 0;
+        $this->success   = false;
     }
 
     public function getName()
@@ -38,8 +38,7 @@ class PHPUnit_Extensions_Phantom_Assertion
     {
         $tab = "\t\t";
         
-        $output = "\t\t/* Assertion \"" . $this->name . "\" */\n\n";        
-        $output .= $tab . "tests[tests.length] = {\n";
+        $output = $tab . "tests[tests.length] = {\n";
         $output .= $tab . "    'name': " . json_encode($this->name) . ",\n";
         $output .= $tab . "    'pass': " . $this->condition . "\n";
         $output .= $tab . "};\n";

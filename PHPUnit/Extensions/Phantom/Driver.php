@@ -6,6 +6,8 @@
 class PHPUnit_Extensions_Phantom_Driver
 {
     private $tests;
+    
+    // PHPUnit_Framework_TestCase
     private $testcase;
 
     public function __construct($testcase)
@@ -19,15 +21,20 @@ class PHPUnit_Extensions_Phantom_Driver
         $this->tests[] = new PHPUnit_Extensions_Phantom_Assertion($name, $condition);
     }
 
-    public function assertEquals($name, $value, $condition)
+    public function assertEquals($name, $condition, $value)
     {
-        $this->tests[] = new PHPUnit_Extensions_Phantom_Assertion($name, '' . json_encode($value) . " == $condition");
+        $this->tests[] = new PHPUnit_Extensions_Phantom_Assertion($name, json_encode($value) . " == $condition");
+    }
+    
+    public function assertEqualsNot($name, $condition, $value)
+    {
+        $this->tests[] = new PHPUnit_Extensions_Phantom_Assertion($name, json_encode($value) . " != $condition");
     }
 
-    public function exec($name, $payloadToExecute)
+    /*public function exec($name, $payloadToExecute)
     {
         $this->tests[] = new PHPUnit_Extensions_Phantom_PayloadExecute($name, $payloadToExecute);
-    }
+    }*/
 
     /**
      * Test uses Phantom's page.evaluate() for code evaluation.
@@ -75,7 +82,7 @@ EOT;
     };
 EOT;
 
-        #echo $output;
+        //echo $output;
 
         $testResult = $this->executeTemporaryTestFile($output);
 
@@ -120,9 +127,12 @@ EOT;
     {
         $file = tempnam(sys_get_temp_dir(), "phantomjs_" . uniqid());
 
+        // @codeCoverageIgnoreStart
         if (false === $file) {
             throw new \RuntimeException('Could not create temp file. Check temp directory permissions.');
         }
+        // @codeCoverageIgnoreEnd
+        
 
         file_put_contents($file, $content);
 

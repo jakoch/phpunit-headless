@@ -3,7 +3,7 @@ class DriverTest extends \PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
-
+        $this->driver = new PHPUnit_Extensions_Phantom_Driver('DriverTests');
     }
 
     public function testExecutePhantomJs()

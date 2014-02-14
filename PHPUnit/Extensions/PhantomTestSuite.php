@@ -77,6 +77,7 @@ class PHPUnit_Extensions_PhantomTestSuite extends PHPUnit_Framework_TestSuite
         // Tests come from Folder.
         // create tests from a folder with phantom .js or .coffee files
         if (isset($staticProperties['phantomPath']) === true) {
+            
             if (is_dir($staticProperties['phantomPath']) === true) {
                 $files = array_merge(
                     self::getTestFilesFromFolder($staticProperties['phantomPath'], '.js'), 
@@ -107,7 +108,7 @@ class PHPUnit_Extensions_PhantomTestSuite extends PHPUnit_Framework_TestSuite
                 // filename to testname
                 $testname = 'test_' . str_replace('.', '_', $basename);
 
-                // every Phantom test file gets its own PHP test (with an executePhantomJS call in it)
+                // every Phantom test file gets its own test case (one executePhantomJS call each)
                 $test = new PHPUnit_Extensions_Phantom_FileExecute($testname, array($file));
 
                 $suite->addTest($test, $classGroups);
