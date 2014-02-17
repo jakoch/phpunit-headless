@@ -1,8 +1,8 @@
 # PHPUnit Headless
 
-| Branch | Unit Tests | Coverage |
-| ------ | ---------- | -------- |
-| [![Latest Stable Version](https://poser.pugx.org/jakoch/phpunit-headless/v/stable.png)](https://packagist.org/packages/jakoch/phpunit-headless/) | [![Build Status](https://travis-ci.org/jakoch/phpunit-headless.png?branch=master)](https://travis-ci.org/jakoch/phpunit-headless/) | [![Code Coverage](https://scrutinizer-ci.com/g/jakoch/phpunit-headless/badges/coverage.png?s=d5f1f3d8d60acface9af5703812a1b7824fcce7c)](https://scrutinizer-ci.com/g/jakoch/phpunit-headless/) |
+| Branch | Downloads | Unit Tests | Coverage |
+| ------ | --------- | ---------- | -------- |
+| [![Latest Stable Version](https://poser.pugx.org/jakoch/phpunit-headless/v/stable.png)](https://packagist.org/packages/jakoch/phpunit-headless/) | [![Total Downloads](https://poser.pugx.org/jakoch/phpunit-headless/d/total.png)](https://packagist.org/packages/jakoch/phpunit-headless/) | [![Build Status](https://travis-ci.org/jakoch/phpunit-headless.png?branch=master)](https://travis-ci.org/jakoch/phpunit-headless/) | [![Code Coverage](https://scrutinizer-ci.com/g/jakoch/phpunit-headless/badges/coverage.png?s=d5f1f3d8d60acface9af5703812a1b7824fcce7c)](https://scrutinizer-ci.com/g/jakoch/phpunit-headless/) |
 
 PHPUnit Headless is a PHPUnit extension which provides wrappers to PhantomJS and SlimerJS.
 
