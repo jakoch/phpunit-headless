@@ -21,7 +21,7 @@ before_install:
   - ./bin/bin/phantomjs -v                                  # < display PhantomJS Version
 
 script:
-  - phpunit -c ./tests/phpunit.xml.travis --testdox
+  - phpunit -c ./tests/phpunit.xml.dist --testdox
 
 notifications:
   email: false
