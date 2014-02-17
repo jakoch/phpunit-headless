@@ -14,23 +14,23 @@ tools:
         config:
             level: all
         filter:
-            paths: [src/*, tests/*]
+            paths: [PHPUnit/*, tests/*]
 
     php_code_sniffer:
         enabled: true
         config:
             standard: PSR2
         filter:
-            paths: [src/*, tests/*]
+            paths: [PHPUnit/*, tests/*]
 
     php_mess_detector: false
 
     php_analyzer:
         enabled: true
         filter:
-            paths: [src/*, tests/*]
+            paths: [PHPUnit/*, tests/*]
 
     php_code_coverage:
         enabled: true
         filter:
-            paths: [src/*, tests/*]
+            paths: [PHPUnit/*, tests/*]
