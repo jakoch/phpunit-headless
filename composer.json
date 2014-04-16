@@ -1,4 +1,4 @@
-{
+﻿{
     "name": "jakoch/phpunit-headless",
     "description": "Headless is a PhantomJS and SlimerJS integration for PHPUnit.",
     "type": "library",
@@ -18,7 +18,7 @@
     },
     "require": {
         "php"                        : ">=5.3.3",
-        "phpunit/phpunit"            : "4.0.*@dev",
+        "phpunit/phpunit"            : "4.1.*@dev",
         "jakoch/phantomjs-installer" : "1.9.7"
     },
     "autoload": {
