@@ -14,13 +14,15 @@ It runs purely headless (no X11) on Linux and is ideal for continuous integratio
 
 SlimerJS is a (not yet fully) headless browser helper running on XulRunner as used by Gecko/Firefox.
 
-Firefox -> PhantomJS + CasperJS + jQuery
-
-Google  -> SlimerJS  + CasperJS + jQuery
+- Google support via [PhantomJS](http://phantomjs.org/) + [CasperJS](http://casperjs.org/) + jQuery
+- Firefox support via [SlimerJS](http://slimerjs.org/) + [CasperJS](http://casperjs.org/) + jQuery
+- [QUnit](http://qunitjs.com/) for Javascript unit-tests
 
 ## Requirements
 
-* PHPUnit 3.7.*
+Requirements are fetched via Composer.
+
+* PHPUnit 4.*
 * PhantomJS 1.9.*
 
 ## Installation via Composer
