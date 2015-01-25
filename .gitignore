@@ -5,8 +5,11 @@
 # To have a global effect affect to all repositories run this command:
 # git config --global core.excludesfile ~/.gitignore
 
-/bin
-/vendor
+bin
+vendor
+tests
+
+/bin/phantomjs
 
 # Mac OS X Finder and whatnot
 .DS_Store
@@ -36,3 +39,7 @@ cache/**/*
 
 # PHPUnit
 phpunit.xml
+
+.gitignore
+.travis.yml
+.scrutinizer.yml
