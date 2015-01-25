@@ -168,7 +168,7 @@ EOT;
         if (DIRECTORY_SEPARATOR === '\\') {
             $cmd = $bin_dir . "\bin\phantomjs.exe";
         } else {
-            $cmd = $bin_dir . "/bin/bin/phantomjs";
+            $cmd = $bin_dir . "/bin/phantomjs";
         }
 
         // test existence of PhantomJS binary
@@ -178,14 +178,14 @@ EOT;
                 'Place it either on the environment path or into the /bin folder of your project.'
             );
         }
-        
+
         // test executable permission of PhantomJS binary
-         if (is_executable($cmd) === false) {
+        if (is_executable($cmd) === false) {
             throw new Exception(
                 'The PhantomJS binary was found! But it is not executable. Check permission.'
             );
         }
-        
+
         /**
          * Construct the PhantomJS command
          * 
