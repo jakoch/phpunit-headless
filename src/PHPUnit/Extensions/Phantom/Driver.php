@@ -171,27 +171,38 @@ EOT;
             $cmd = $bin_dir . "/bin/bin/phantomjs";
         }
 
-        // PhantomJS binary was not found
-        if ((is_file($cmd) === false) or (is_executable($cmd) === false)) {
+        // test existence of PhantomJS binary
+        if (is_file($cmd) === false) {
             throw new Exception(
                 'The PhantomJS binary was not found! ' .
                 'Place it either on the environment path or into the /bin folder of your project.'
             );
         }
+        
+        // test executable permission of PhantomJS binary
+         if (is_executable($cmd) === false) {
+            throw new Exception(
+                'The PhantomJS binary was found! But it is not executable. Check permission.'
+            );
+        }
+        
+        /**
+         * Construct the PhantomJS command
+         * 
+         * phantomjs [options] somescript.js [arg1 [arg2 [...]]]
+         */
 
         // options
         $cmd .= (isset($options) === true) ? " " . escapeshellarg($options) : '';
 
-        // filename to execute
+        // javascript filename to execute
         $cmd .= " " . escapeshellarg($testFile);
 
         // arguments
         $cmd .= (isset($args) === true) ? " " . escapeshellarg($args) : '';
 
-        // the full cmd = phantomjs [options] somescript.js [arg1 [arg2 [...]]]
+        // execute cmd 
         $stdout = shell_exec($cmd);
-
-        //exit(var_dump($stdout));
 
         return $stdout;
     }

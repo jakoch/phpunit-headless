@@ -19,7 +19,7 @@ class PHPUnit_Extensions_Phantom_FileExecute extends PHPUnit_Framework_TestCase
         $stdout = PHPUnit_Extensions_Phantom_Driver::executePhantomJS($this->file[0]);
 
         // yo, dawg. it's always true :)
-        $this->assertTrue(1);
+        $this->assertTrue(true);
 
         // return the test result for further assertions
         return $stdout;
