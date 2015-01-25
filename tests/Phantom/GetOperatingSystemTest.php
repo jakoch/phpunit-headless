@@ -1,11 +1,6 @@
 <?php
 class GetOperatingSystemTest extends \PHPUnit_Framework_TestCase
 {
-    public function setUp()
-    {
-        $this->os = new GetOperatingSystem();
-    }
-
     public function testGetOperatingSystem()
     {
         $result = GetOperatingSystem::getOS();
@@ -62,7 +57,8 @@ class GetOperatingSystemTest extends \PHPUnit_Framework_TestCase
             GetOperatingSystem::getBitSize()
         );
 
-        $result = $this->os->__toString();
+        $os = new GetOperatingSystem();
+        $result = $os->__toString();
 
         $this->assertTrue(is_string($result));
         $this->assertEquals($expectedString, $result);
