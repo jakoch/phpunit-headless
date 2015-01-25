@@ -7,4 +7,8 @@ class Extensions_Phantom_Tests_TestSuiteFromFolderTest extends PHPUnit_Extension
     // @see PHPUnit_Extensions_PhantomTestSuite::getPhantomFiles()
     private static $phantomPath = __DIR__;
     
+    public function testPathForTestSuiteIsDefined()
+    {
+        $this->assertEquals(__DIR__, self::$phantomPath);
+    }
 }
