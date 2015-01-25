@@ -41,6 +41,6 @@ cache/**/*
 # PHPUnit
 phpunit.xml
 
-.gitignore
-.travis.yml
-.scrutinizer.yml
+/.gitignore
+/.travis.yml
+/.scrutinizer.yml
