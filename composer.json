@@ -21,6 +21,16 @@
         "phpunit/phpunit"            : "4.*",
         "jakoch/phantomjs-installer" : "1.9.8"
     },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/"
+        ]
+    },
     "config": {
         "bin-dir": "bin"
     },

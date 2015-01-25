@@ -18,15 +18,10 @@ class PHPUnit_Extensions_Phantom_FileExecute extends PHPUnit_Framework_TestCase
     {
         $stdout = PHPUnit_Extensions_Phantom_Driver::executePhantomJS($this->file[0]);
 
-        // yo, dawg. it's always true :) 
-        // also true, when file executed without stdout, because an image was rendered
-        if (empty($stdout)) {
-            $this->assertTrue(empty($stdout));
-        } else {
-            $this->assertTrue(!empty($stdout));
-        }
+        // yo, dawg. it's always true :)
+        $this->assertTrue(1);
 
-        // return the test resul for further assertions
+        // return the test result for further assertions
         return $stdout;
     }
 
