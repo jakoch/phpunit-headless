@@ -78,6 +78,8 @@ class PHPUnit_Extensions_PhantomTestSuite extends PHPUnit_Framework_TestSuite
         // create tests from a folder with phantom .js or .coffee files
         if (isset($staticProperties['phantomPath']) === true) {
             
+            $files = array();
+            
             if (is_dir($staticProperties['phantomPath']) === true) {
                 $files = array_merge(
                     self::getTestFilesFromFolder($staticProperties['phantomPath'], '.js'), 
@@ -96,13 +98,13 @@ class PHPUnit_Extensions_PhantomTestSuite extends PHPUnit_Framework_TestSuite
 
                 // exclude some javascript tests from execution, because:
                 $excludedFiles = array(
-                    'modernizr', 'jquery',                    // library dependency
-                    'movies', 'seasonfood', 'outputEncoding', // broken test
-                    'sleepsort', 'stdin-stdout-stderr',       // test needs CLI arguments or interaction
-                    'universe',                               // is part of an include demo
-                    'colorwheel', 'technews',                 // return value is NULL
+                    'modernizr', 'jquery',                      // library dependency
+                    'movies', 'seasonfood', 'outputEncoding',   // broken test
+                    'sleepsort', 'stdin-stdout-stderr',         // test needs CLI arguments or interaction
+                    'universe',                                 // is part of an include demo
+                    'colorwheel', 'technews',                   // return value is NULL
                 );
-                
+
                 if (in_array($filename, $excludedFiles) === true) {
                     continue;
                 }
@@ -115,6 +117,7 @@ class PHPUnit_Extensions_PhantomTestSuite extends PHPUnit_Framework_TestSuite
 
                 $suite->addTest($test, $classGroups);
             }
+            
         } else {
             // Test come from a TestCaseClass.
             // create tests for all methods of the test case class
