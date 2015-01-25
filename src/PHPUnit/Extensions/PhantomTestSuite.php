@@ -100,7 +100,7 @@ class PHPUnit_Extensions_PhantomTestSuite extends PHPUnit_Framework_TestSuite
                     'movies', 'seasonfood', 'outputEncoding', // broken test
                     'sleepsort', 'stdin-stdout-stderr',       // test needs CLI arguments or interaction
                     'universe',                               // is part of an include demo
-                    'colorwheel_js', 'technews_js',           // return value is NULL
+                    'colorwheel', 'technews',                 // return value is NULL
                 );
                 
                 if (in_array($filename, $excludedFiles) === true) {
