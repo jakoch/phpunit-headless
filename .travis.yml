@@ -7,10 +7,6 @@ language: php
 
 php: [5.4, 5.5, 5.6, hhvm]
 
-#before_script:
-  #- wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.7-linux-x86_64.tar.bz2
-  #- tar -zxvf phantomjs-1.9.7-linux-x86_64.tar.bz2 -C /usr/bin phantomjs-1.9.7-linux-x86_64/bin/phantomjs
-
 before_script:
   - composer self-update
   - composer install --dev --prefer-dist --no-interaction
