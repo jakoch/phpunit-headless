@@ -11,13 +11,19 @@ php: [5.4, 5.5, 5.6, hhvm]
   #- wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.7-linux-x86_64.tar.bz2
   #- tar -zxvf phantomjs-1.9.7-linux-x86_64.tar.bz2 -C /usr/bin phantomjs-1.9.7-linux-x86_64/bin/phantomjs
 
-before_install:
+before_script:
   - composer self-update
   - composer install --dev --prefer-dist --no-interaction
+  - pyrus install pear/PHP_CodeSniffer
+  - phpenv rehash
   - ./bin/phantomjs -v                                      # < display PhantomJS Version
 
 script:
-  - phpunit -c ./tests/phpunit.xml.dist --testdox
+  - phpunit -c ./tests/phpunit.xml.dist --testdox --coverage-clover=coverage.clover
+
+after_script:
+  - wget https://scrutinizer-ci.com/ocular.phar
+  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
 
 notifications:
   email: false
