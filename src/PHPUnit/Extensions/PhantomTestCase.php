@@ -43,9 +43,7 @@ abstract class PHPUnit_Extensions_PhantomTestCase extends PHPUnit_Framework_Test
      * @return mixed
      */
     public function __call($command, $arguments)
-    {
-        var_dump($command);
-        
+    {       
         if ($this->phantom === null) {
             $msg = sprintf('There is currently no active Phantom session to execute the "%s" command.', $command);
             $msg .= ' You are probably trying to set some option in setUp() with an incorrect setter name.';
