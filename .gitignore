@@ -6,6 +6,7 @@
 # git config --global core.excludesfile ~/.gitignore
 
 bin
+build
 vendor
 tests
 

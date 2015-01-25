@@ -7,6 +7,9 @@ class PHPUnit_Extensions_Phantom_PayloadExecute extends PHPUnit_Framework_TestCa
     public $payloadToExecute;
     private $success;
 
+    /**
+     * @param string $name
+     */
     public function __construct($name, $payloadToExecute = '')
     {
         parent::__construct($name);
@@ -15,6 +18,9 @@ class PHPUnit_Extensions_Phantom_PayloadExecute extends PHPUnit_Framework_TestCa
         $this->payloadToExecute = $payloadToExecute;
     }
 
+    /**
+     * @param string $payloadToExecute
+     */
     public function setPayload($payloadToExecute)
     {
         $this->payloadToExecute = $payloadToExecute;
