@@ -17,9 +17,9 @@
         "irc"    : "irc://irc.freenode.net/koch"
     },
     "require": {
-        "php"                        : ">=5.3.3",
-        "phpunit/phpunit"            : "4.1.*"
-        "jakoch/phantomjs-installer" : "1.9.7"
+        "php"                        : ">=5.4",
+        "phpunit/phpunit"            : "4.*",
+        "jakoch/phantomjs-installer" : "1.9.8"
     },
     "config": {
         "bin-dir": "bin"
