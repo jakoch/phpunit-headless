@@ -6,6 +6,9 @@ class PHPUnit_Extensions_Phantom_FileExecute extends PHPUnit_Framework_TestCase
 {
     private $file;
 
+    /**
+     * @param string $name
+     */
     public function __construct($name, $file)
     {
         parent::__construct($name, array($file));
