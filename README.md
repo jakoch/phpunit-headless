@@ -17,6 +17,7 @@ SlimerJS is a (not yet fully) headless browser helper running on XulRunner as us
 - Google support via [PhantomJS](http://phantomjs.org/) + [CasperJS](http://casperjs.org/) + jQuery
 - Firefox support via [SlimerJS](http://slimerjs.org/) + [CasperJS](http://casperjs.org/) + jQuery
 - [QUnit](http://qunitjs.com/) for Javascript unit-tests
+- [YSlow](http://yslow.org/phantomjs/) for page performance analysis
 
 ## Requirements
 
